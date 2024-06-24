@@ -12,7 +12,7 @@ namespace U3Cliente
     public partial class App : Application
     {
         public static string Url = "https://apiactnuevateam.websitos256.com/api/";
-        //public static string Url = "https://localhost:44380/api/";
+        ///public static string Url = "https://localhost:44380/api/";
         public static DepartamentoService departamentoService = new();
         public static ActividadService actividadService = new();
         public static VistaViewModel MainViewModel { get; set; } = new VistaViewModel();
