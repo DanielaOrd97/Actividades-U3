@@ -11,8 +11,6 @@ namespace U3Cliente
     /// </summary>
     public partial class App : Application
     {
-        //public static string Url = "https://test2.sistemas19.com/api/";
-        //public static string Url = "https://localhost:44304/api/";
         public static string Url = "https://apiactnuevateam.websitos256.com/api/";
         //public static string Url = "https://localhost:44380/api/";
         public static DepartamentoService departamentoService = new();
