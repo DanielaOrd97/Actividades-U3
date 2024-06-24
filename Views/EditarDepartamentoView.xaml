@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="U3Cliente.Views.EditarDepartamentoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:U3Cliente.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#EDE5FF"
+                                 Opacity=".7"></SolidColorBrush>
+        </Grid.Background>
+        <Border CornerRadius="20"
+                    Margin="30"
+                    VerticalAlignment="Center"
+                    Background="#f8f5ff" Padding="40">
+            <Border.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="17"></Setter>
+                    <Setter Property="FontFamily" Value="../Assets/#Gotham"></Setter>
+                    <Setter Property="Margin" Value="0 0 0 5"></Setter>
+                </Style>
+            </Border.Resources>
+            <Border.Effect>
+                <DropShadowEffect Direction="0"
+                   ShadowDepth="0"
+                   BlurRadius="25"
+                   Opacity=".7"></DropShadowEffect>
+            </Border.Effect>
+            <Grid Margin="10 0 10 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <DockPanel>
+                    <Border Width="50"
+                                Margin="0 20 0 0"
+                                DockPanel.Dock="Right">
+                        <Grid>
+                            <Image Source="../Assets/basura.png"
+                                   RenderOptions.BitmapScalingMode="Fant"
+                                   Width="25" >
+                                <Image.Effect>
+                                    <DropShadowEffect Direction="0"
+                                                      ShadowDepth="0"
+                                                      BlurRadius="25"
+                                                      Opacity=".7"></DropShadowEffect>
+                                </Image.Effect>
+                            </Image>
+                            <Button Background="Transparent" Command="{Binding EliminarDeptoCommand}"></Button>
+                        </Grid>
+
+                    </Border>
+                    <StackPanel VerticalAlignment="Center"
+                                    Margin="0 0 30 0">
+                        <Label>Nombre del departamento</Label>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                                     VerticalContentAlignment="Center" Text="{Binding departamentoActualDetalles.Nombre}">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="0"
+                                                      ShadowDepth="0"
+                                                      BlurRadius="25"
+                                                      Opacity=".1"></DropShadowEffect>
+                            </TextBox.Effect>
+                        </TextBox>
+                    </StackPanel>
+                </DockPanel>
+                <Grid Grid.Row="1" Margin="0 0 30 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <DockPanel Margin="0 0 5 0">
+                        <Label DockPanel.Dock="Top">Usuario</Label>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                                     AcceptsReturn="True"
+                                     Padding="5"
+                                     DockPanel.Dock="Top"
+                                 Text="{Binding departamentoActualDetalles.Username}">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="0"
+                                                      ShadowDepth="0"
+                                                      BlurRadius="25"
+                                                      Opacity=".3"></DropShadowEffect>
+                            </TextBox.Effect>
+                        </TextBox>
+                    </DockPanel>
+
+                    <DockPanel Margin="0 0 5 0" Grid.Column="1">
+                        <Label DockPanel.Dock="Top">Contraseña</Label>
+                        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"
+                                     AcceptsReturn="True"
+                                     Padding="5"
+                                     DockPanel.Dock="Top"
+                                 Text="{Binding departamentoActualDetalles.Password}">
+                            <TextBox.Effect>
+                                <DropShadowEffect Direction="0"
+                                                      ShadowDepth="0"
+                                                      BlurRadius="25"
+                                                      Opacity=".3"></DropShadowEffect>
+                            </TextBox.Effect>
+                        </TextBox>
+                    </DockPanel>
+
+                    <WrapPanel Grid.Row="1"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Right">
+                        <Button Foreground="White" Margin="0 0 10 0" Width="130" Height="50" Style="{DynamicResource RoundCorner}" Command="{Binding VerDepartamentosCommand}">Cancelar</Button>
+                        <Button Foreground="White" Width="130" Height="50" Style="{DynamicResource RoundCorner}" Command="{Binding EditarDeptoCommand}">Guardar Cambios</Button>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
